@@ -14,12 +14,6 @@ spec:
     spec:
       containers:
         - name: hello-world
-          image: busybox:1.36
-          command:
-            - sh
-            - -c
-            - |
-              echo "hello from k3s via flux" > /www/index.html && \
-              httpd -f -p 80 -h /www
+          image: nginxdemos/hello:latest
           ports:
             - containerPort: 80
